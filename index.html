@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+
+        <h1>Simulador de Carga de Productos</h1>
+
+        <form id="productForm">
+            <label for="productName">Nombre del producto:</label>
+            <input type="text" id="productName">
+            
+            <label for="productPrice">Precio del producto:</label>
+            <select id="priceSelect" onchange="updatePriceInput()">
+              <option value="" disabled selected>Selecciona un precio</option>
+            </select>
+            <input type="text" id="customPriceInput" placeholder="Ingrese un precio manualmente">
+            
+            <button type="button" onclick="addProduct()">Agregar producto</button>
+          </form>
+          
+          <table id="productTable">
+            <div>
+              <th>Nombre</th>
+              <th>Precio</th>
+            </div>
+          </table>
+
+    </main>
+
+    <script src="./JS/archivo.js"></script>
+</body>
+
+</html>
