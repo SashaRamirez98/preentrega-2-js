@@ -15,17 +15,8 @@ function ocultarMensaje() {
 
 // Función para actualizar el precio según la opción seleccionada
 function actualizarPrecio() {
-  const precioPredeterminado = document.getElementById("precioPredeterminado");
   const opcionesPrecio = document.getElementById("opcionesPrecio");
   const precioManual = document.getElementById("precioManual");
-
-  if (precioPredeterminado.value !== "" && opcionesPrecio.value !== "") {
-    precioPredeterminado.value = "";
-  }
-
-  if (opcionesPrecio.value !== "" && precioPredeterminado.value !== "") {
-    opcionesPrecio.value = "";
-  }
 
   if (opcionesPrecio.value !== "") {
     precioManual.value = "";
@@ -58,7 +49,6 @@ function actualizarTotal() {
 // Función para agregar un producto
 function agregarProducto() {
   const productoNombre = document.getElementById("productoNombre").value.trim();
-  const precioPredeterminado = document.getElementById("precioPredeterminado").value;
   const opcionesPrecio = document.getElementById("opcionesPrecio").value;
   const precioManual = document.getElementById("precioManual").value;
   const productoCantidad = document.getElementById("productoCantidad").value;
@@ -70,9 +60,7 @@ function agregarProducto() {
 
   let precio = "";
 
-  if (precioPredeterminado !== "") {
-    precio = precioPredeterminado;
-  } else if (opcionesPrecio !== "") {
+  if (opcionesPrecio !== "") {
     precio = opcionesPrecio;
   } else if (precioManual !== "") {
     precio = precioManual;
@@ -105,7 +93,6 @@ function agregarProducto() {
 
   // Limpiar campos
   document.getElementById("productoNombre").value = "";
-  document.getElementById("precioPredeterminado").value = "";
   document.getElementById("opcionesPrecio").value = "";
   document.getElementById("precioManual").value = "";
   document.getElementById("productoCantidad").value = "";
